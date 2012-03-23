@@ -1,9 +1,8 @@
-require './content'
-
 class Button < Content
   attr_accessor :label, :type
 
   def initialize(attributes={})
+    super(attributes)
     @label = attributes[:label] || ""
     @type = attributes[:type] || "submit"
   end
