@@ -1,0 +1,28 @@
+Things:
+  - boxes
+    - can have words
+  - field
+    - can take words
+  - images
+  - words
+  - lines
+    - can have words
+  - buttons
+  - videos
+  - animations
+
+
+  - built-ins:
+    - menu
+    - forms
+      - collection of fields
+    - table (array of arrays)
+
+  - all base objects inherit from a base object
+    - method "move" on the base object, would take an end location, and the time it would take it to get there
+
+  - every object can take a location object
+
+  - location object determines position
+
+  - group object that can be composed
