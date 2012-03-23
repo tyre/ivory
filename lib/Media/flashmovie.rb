@@ -28,18 +28,18 @@ class Video < Media
     end
   end
 
-  def set_type(source)
-    case source.to_s
-    when "default"
-      @type='default'
-    when /\.webm$/
-      @type='video/webm; codecs="vp8.0, vorbis"' 
-    when /\.ogv$/
-      @type='video/ogg; codecs="theora, vorbis"' 
-    when /\.mp4$/
-      @type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"'
-    end
-  end
+  # def set_type(source)
+  #   case source.to_s
+  #   when "default"
+  #     @type='default'
+  #   when /\.webm$/
+  #     @type='video/webm; codecs="vp8.0, vorbis"' 
+  #   when /\.ogv$/
+  #     @type='video/ogg; codecs="theora, vorbis"' 
+  #   when /\.mp4$/
+  #     @type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"'
+  #   end
+  # end
 
   def to_css
     return "
