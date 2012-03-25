@@ -1,6 +1,6 @@
 class Video < Media
 
-  attr_accessor :source, :type, :poster, :controls, :preload, :vidloop, :width, :height
+  attr_accessor :source, :type, :poster, :controls, :preload, :vidloop
 
   def initialize
     @poster = "none"
@@ -38,13 +38,3 @@ class Video < Media
   end
 
 end
-
-
-################### PSEUDOCODE ###################
-
-# <video poster="movie.jpg" controls>
-#         <source src='movie.webm' type='video/webm; codecs="vp8.0, vorbis"'/>
-#         <source src='movie.ogv' type='video/ogg; codecs="theora, vorbis"'/>
-#         <source src='movie.mp4' type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"'/>
-#         <p>This is fallback content</p>
-# </video>
