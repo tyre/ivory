@@ -1,31 +1,14 @@
 class Video < Media
 
-  attr_accessor :source, :type, :poster, :controls, :preload, :vidloop
+  attr_accessor :source, :type, :poster, :controls, :preload, :vidloop, :width, :height
 
   def initialize
-    if @poster = nil
-      @poster = "none"
-    end
-
-    if @controls = nil
-      @controls = "controls"
-    end
-
-    if @preload = nil
-      @preload = "none"
-    end
-
-    if @vidloop = nil
-      @pvidloop = "none"
-    end
-
-    if @width = nil
-      @width = "400"
-    end
-
-    if @height = nil
-      @height = "300"
-    end
+    @poster = "none"
+    @controls = "controls"
+    @preload = "none"
+    @pvidloop = "none"
+    @width = "400"
+    @height = "300"
   end
 
   def set_type(source)
@@ -42,27 +25,14 @@ class Video < Media
   end
 
   def to_css
-    return "
-      \##{id} {
-      width= \"#{width}\"
-      height= \"#{height}\"
-      preload= \"#{preload}\"
-      controls= \"#{controls}\"
-      loop= \"#{vidloop}\"
-    }"
+    " ##{id} { width= '#{width}' height= '#{height}' preload= '#{preload}' controls= '#{controls}' loop= '#{vidloop}' } "
 
   end
 
   def to_html
     set_type(@source)
-    return "<video poster= \"#{poster}\"
-                   width= \"#{width}\"
-                   height= \"#{height}\"
-                   preload= \"#{preload}\"
-                   controls= \"#{controls}\"
-                   loop= \"#{vidloop}\"
-                   /> 
-      <source src= \"#{source}\" type= \"#{type}\"/>
+    "<video poster= '#{poster}' width= '#{width}' height= '#{height}' preload= '#{preload}' controls= '#{controls}' loop= '#{vidloop}' /> 
+      <source src= '#{source}' type= '#{type}'/>
       <p>This is fallback content to display if the browser does not support the video element.</p>
     </video>"
   end
