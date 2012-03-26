@@ -1,15 +1,20 @@
 require "./group.rb"
-require "enumerable"
+require "awesome_print"
 
 class Table < Group
   include Enumerable
 
+  attr_accessor :row_header, :column_header
+  attr_reader :rows
+
   def initialize
-    rows = [[]]
+    @rows = [["frat"]]
   end
 
-  def columns
-    @columns = rows.max_by { |row| row.count }
+  def columns_count 
+    ordered = rows.max_by { |row| row.size }
+    ap ordered
+    @columns_count = ordered.first.size
   end
 
   def each
@@ -30,6 +35,33 @@ class Table < Group
       row[column]
     end
     yield column
+  end
+ #####################################################################
+  
+  def to_html
+    html = ""
+    each_row do |row|
+      row.each do |cell|
+        html +=
+      end
+    end
+  end
+
+  def to_s 
+    string = horizontal_line
+    each_row do |row|
+      row.each do |cell|
+        string += "| " + cell.inspect + " |"
+        string += horizontal_line
+      end
+    end
+    string
+  end
+
+  def horizontal_line
+    horizontal = "____"
+    columns_count.times { horizontal += "__"}
+    horizontal+="\n"
   end
 
 end
