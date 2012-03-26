@@ -1,9 +1,8 @@
-require './content'
-
 class Label < Content
   attr_accessor :text
 
   def initialize(attributes={})
+    super(attributes)
     @text = attributes[:text] || ""
   end
 
