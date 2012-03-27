@@ -39,10 +39,10 @@ class Table < Group
  #####################################################################
   
   def to_html
-    html = ""
+    html = "<tr>"
     each_row do |row|
       row.each do |cell|
-        html +=
+        html+= cell.respond_to? to_html ? cell.to_html : cell.to_s
       end
     end
   end
