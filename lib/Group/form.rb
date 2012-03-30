@@ -19,5 +19,4 @@ class Form < Group
     end
     html += "</form>"
   end
-
 end
