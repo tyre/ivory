@@ -8,6 +8,14 @@ class DSObject
     @hidden = attributes[:hidden] || false
   end
 
+  def define_attributes(hash)
+    attr_hash.each do |attribute, value|
+      if respond_to?("#{attribute}=")
+        send("#{attribute}=",value)
+      end
+    end
+  end
+
   def id
     @id = @id || unique_id
   end
@@ -15,18 +23,18 @@ class DSObject
   def compile_css
     "
     ##{id} {
-      #{to_css}
-    }
-    "
-  end
+    #{to_css}
+  }
+  "
+end
 
-  def compile_html
-    to_html
-  end
+def compile_html
+  to_html
+end
 
-  private
+private
 
-  def unique_id
-    (0...12).map{65.+(rand(25)).chr}.join.downcase
-  end
+def unique_id
+  (0...12).map{65.+(rand(25)).chr}.join.downcase
+end
 end
