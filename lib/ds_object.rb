@@ -1,7 +1,7 @@
 ## TODO: Make sure ids dont clash
 class DSObject
   attr_accessor :id, :size, :hidden, :location, :title, :dir, :lang,
-  :access_key, :tab_index
+  :access_key, :tab_index, :events
 
   def initialize(attributes={location: })
     attributes.each do |key, value|
@@ -10,6 +10,7 @@ class DSObject
     @id ||= attributes[:id]
     @location ||= Location.new(:left => 0, :top => 0)
     @hidden ||= false
+    @events ||= []
   end
 
   def define_attributes(hash)
