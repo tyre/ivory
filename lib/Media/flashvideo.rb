@@ -1,6 +1,6 @@
-class FlashMovie < Media
+class FlashVideo < Media
 
-  attr_accessor :source, :element, :version, :width, :height
+  attr_accessor :source, :element, :version, :flashvars, :params, :width, :height
 
   def initialize
     @source = "nil"
@@ -8,6 +8,8 @@ class FlashMovie < Media
     @version = "8.0.0"
     @width = "400"
     @height = "300"
+    @flashvars = "flashvars"
+    @params = "params"
   end
 
   def to_css
@@ -17,13 +19,20 @@ class FlashMovie < Media
       source= '#{source}'
       element= '#{element}'
       version= '#{version}'
+      flashvars= '#{flashvars}'
+      params= '#{params}'
     }"
   end
 
   def to_html
     "<script type = 'text/javascript' src = 'http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js'></script>"
-    "<script type= 'text/javascript'>swfobject.embedSWF('#{source}', '#{element}', '#{width}', '#{height}', '#{version}');</script>"
-    "<div id= #{element}><p>An animation of #{element}</p></div>"
+    "<script type= 'text/javascript'>
+      var flashvars = {#{flashvars}};
+      var params = {movie:'#{source}'};
+      swfobject.embedSWF('flash/splayer.swf',
+      '#{element}', '#{width}', '#{height}', '#{version}',
+      '#{flashvars}', '#{params}');</script>"
+    "<div id= #{element}><p>A video of #{element}</p></div>"
   end
 
   ##TODO: Decide how the <script> elements are going to be handlded/placed vis-a-vis the body elements
