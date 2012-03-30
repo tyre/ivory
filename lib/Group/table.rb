@@ -35,30 +35,18 @@ class Table < Group
     end
     yield column
   end
- #####################################################################
-
- def to_html
-  html = "<table>"
-  each_row do |row|
-    html += "<tr>"
-    row.each do |cell|
-      cell_html= cell.respond_to?(:to_html) ? cell.to_html : cell.to_s
-      html += "<td>#{cell_html}</td>"
+  
+  def to_html
+    html = "<table>"
+    each_row do |row|
+      html += "<tr>"
+      row.each do |cell|
+        cell_html= cell.respond_to?(:to_html) ? cell.to_html : cell.to_s
+        html += "<td>#{cell_html}</td>"
+      end
+      html += "</tr>"
     end
-    html += "</tr>"
+    html += "</table>"
   end
-  html += "</table>"
-end
-
-  # def to_s 
-  #   string = horizontal_line
-  #   each_row do |row|
-  #     row.each do |cell|
-  #       string += "| " + cell.inspect + " |"
-  #       string += horizontal_line
-  #     end
-  #   end
-  #   string
-  # end
 
 end
