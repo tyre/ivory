@@ -1,11 +1,15 @@
 ## TODO: Make sure ids dont clash
 class DSObject
-  attr_accessor :id, :size, :hidden, :location
+  attr_accessor :id, :size, :hidden, :location, :title, :dir, :lang,
+  :access_key, :tab_index
 
-  def initialize(attributes={})
-    @id = attributes[:id]
-    @location = attributes[:location] || Location.new(:left => 0, :top => 0)
-    @hidden = attributes[:hidden] || false
+  def initialize(attributes={location: })
+    attributes.each do |key, value|
+      self.send("#{key}=", value)
+    end
+    @id ||= attributes[:id]
+    @location ||= Location.new(:left => 0, :top => 0)
+    @hidden ||= false
   end
 
   def define_attributes(hash)
