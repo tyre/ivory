@@ -1,6 +1,6 @@
 module ClassMethods
-    def define_attributes(hash)
-    attr_hash.each do |attribute, value|
+  def define_attributes(hash)
+    hash.each do |attribute, value|
       if respond_to?("#{attribute}=")
         send("#{attribute}=",value)
       end
@@ -19,6 +19,7 @@ class Class
 
   def defaults(hash)
     hash.each do |attribute_name, default_value|
+      attr_writer attribute_name
       define_method(attribute_name) do
         instance_variable_get("@#{attribute_name}") || instance_variable_set("@#{attribute_name}", default_value)
       end

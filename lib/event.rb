@@ -7,4 +7,8 @@ class Event
   def initialize(attributes = {})
     define_attributes(attributes)
   end
+
+  def to_html
+    "#{self.type}='#{self.action}'"
+  end
 end

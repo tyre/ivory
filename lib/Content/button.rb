@@ -8,6 +8,6 @@ class Button < Content
   protected
 
   def to_html
-    "<input id='#{id}' type='#{@type}' value='#{@label}' />"
+    "<input id='#{id}' type='#{self.type}' value='#{self.label}' />"
   end
 end

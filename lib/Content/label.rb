@@ -8,6 +8,6 @@ class Label < Content
   protected
 
   def to_html
-    "<span id='#{id}'>#{@text}</span>"
+    "<span id='#{id}'>#{self.text}</span>"
   end
 end

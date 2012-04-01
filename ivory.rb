@@ -4,14 +4,14 @@ require './lib/Content/button'
 require './lib/Content/textbox'
 require './lib/Content/label'
 require './lib/Content/link'
-require "./lib/helper_modules/default"
+require "./lib/Utility/class_methods"
 
 class Ivory
   
   attr_with_default :items, []
 
-  def add(*items)
-    @items = @items | items
+  def add(*new_items)
+    self.items += new_items
   end
 
   def compile_html
