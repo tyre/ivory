@@ -1,10 +1,10 @@
 require "./group.rb"
 
 class Form < Group
-  attr_accessor :action, :name, :inputs
+  attr_accessor :action, :name, 
+  defaults :inputs => []
 
   def initialize(attr_hash={})
-    self.inputs = []
     define_attributes(attr_hash)
   end
 
