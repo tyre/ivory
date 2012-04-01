@@ -4,14 +4,11 @@ require './lib/Content/button'
 require './lib/Content/textbox'
 require './lib/Content/label'
 require './lib/Content/link'
+require "./lib/helper_modules/default"
 
 class Ivory
   
-  attr_accessor :items
-
-  def initialize
-    @items = []
-  end
+  attr_with_default :items, []
 
   def add(*items)
     @items = @items | items
@@ -19,7 +16,8 @@ class Ivory
 
   def compile_html
     html = ''
-    @items.each do |item|
+
+    self.items.each do |item|
       html += item.compile_html + "\n"
     end
     html
@@ -27,7 +25,7 @@ class Ivory
 
   def compile_css
     css = ''
-    @items.each do |item|
+    self.items.each do |item|
       css += item.compile_css + "\n"
     end
     css
