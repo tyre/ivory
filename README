@@ -1,28 +1,35 @@
-Things:
-  - boxes
-    - can have words
-  - field
-    - can take words
-  - images
-  - words
-  - lines
-    - can have words
-  - buttons
-  - videos
-  - animations
+Ivory
 
+Premise : 
 
-  - built-ins:
-    - menu
-    - forms
-      - collection of fields
-    - table (array of arrays)
+HTML sucks for people. Computers can read and parse trees efficiently, but HTML poorly reflects our outlook on the world. Object-Orient front-end design will encourage developers to think of web applications as a collection of objects => containers, widgets, and forms, each with unique (or grouped) styling and locations.
 
-  - all base objects inherit from a base object
-    - method "move" on the base object, would take an end location, and the time it would take it to get there
+Structure :
+Ironically, Ivory's basic structure is a tree (but inheiritance is naturally such a structure.)
 
-  - every object can take a location object
+- DSObject [The base object]
+  - Content
+    + Button
+    + Label
+    + Link
+    + Textbox
+  - Media
+    + HTML5Audio
+    + HTML5Video
+    + FlashAudio
+    + FlashMovie
+    + Image
+  - Group
+    + Form
+    + Input
+    + List
+    + Table
+- Location
+- Event
 
-  - location object determines position
+Locations are based on either absolute distance from the origin (upper left being 0,0) or relative location within the screen (upper left being 0%, 0%). This allows for greater flexibility, as objects can absolutely or relatively position themselves based on attributes of other objects. (Variables! So Meta!)
 
-  - group object that can be composed
+Events are basic javascript event-handlers, attached to objects. Their events will be directly compiled into JS, though CSS3 and HTML5 specifications are preferred for everything else (animations, etc.)
+
+¡¡¡¡¡¡ LICENSE !!!!!!
+This License (and the README) must be included with the distribution of this code. If you like what we've done and meet us at a conference or on the streets, you are obligated to purchase us a beer. Other than that, Ivory is here to make your life better and design a better front-end. So stop reading this and go do it!
