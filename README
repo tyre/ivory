@@ -2,7 +2,7 @@ Ivory
 
 Premise : 
 
-HTML sucks for people. Computers can read and parse trees efficiently, but HTML poorly reflects our outlook on the world. Object-Orient front-end design will encourage developers to think of web applications as a collection of objects => containers, widgets, and forms, each with unique (or grouped) styling and locations.
+HTML sucks for people. Computers can read and parse trees efficiently, but HTML poorly reflects our outlook on the world. Object-Oriented front-end design will encourage developers to think of web applications as a collection of objects => containers, widgets, and forms, each with unique (or grouped) styling and locations.
 
 Structure :
 Ironically, Ivory's basic structure is a tree (but inheiritance is naturally such a structure.)
