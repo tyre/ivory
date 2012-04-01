@@ -1,14 +1,10 @@
 class HTML5Video < Media
 
-  attr_accessor :source, :type, :poster, :controls, :preload, :vidloop, :width, :height
-
-  def initialize
-    @poster = "none"
-    @controls = "controls"
-    @preload = "none"
-    @pvidloop = "none"
-    @width = "400"
-    @height = "300"
+  attr_accessor :source, :type
+  defaults poster: "none", controls: "controls", preload: "none",
+    vidloop: "none", width: "400", height: "300"
+  def initialize(attributes={})
+    define_attributes(attributes)
   end
 
   def set_type(source)

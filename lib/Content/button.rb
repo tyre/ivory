@@ -1,10 +1,8 @@
 class Button < Content
-  attr_accessor :label, :type
+  defaults label: "", type: "submit"
 
   def initialize(attributes={})
-    super(attributes)
-    @label = attributes[:label] || ""
-    @type = attributes[:type] || "submit"
+    define_attributes(attributes)
   end
 
   protected

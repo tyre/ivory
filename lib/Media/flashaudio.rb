@@ -1,15 +1,10 @@
 class FlashAudio < Media
 
-  attr_accessor :source, :element, :version, :flashvars, :params, :width, :height
+  defaults source: "nil", element: "nil", version: "8.0.0",
+    flashvars: "flashvars", params: "params", width: "400", height: "300"
 
-  def initialize
-    @source = "nil"
-    @element = "nil"
-    @version = "8.0.0"
-    @width = "400"
-    @height = "300"
-    @flashvars = "flashvars"
-    @params = "params"
+  def initialize(attributes={})
+    define_attributes(attributes)
   end
 
   def to_css

@@ -1,10 +1,8 @@
 class Content < DSObject
-  attr_accessor :color, :font, :size
+  defaults color: "Black", font: "Helvetica, Arial", size: "16"
 
   def initialize(attributes = {})
-    @color = attributes[:color] || ''
-    @font = attributes[:font] || ''
-    @size = attributes[:size] || ''
+    define_attributes(attributes)
   end
 
   def to_css

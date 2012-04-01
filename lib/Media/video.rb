@@ -1,12 +1,11 @@
 class Video < Media
 
-  defaults :controls=> "controls", :preload => "none", :vidloop => "none", :width => "400", :height => "300"
+  defaults controls: "controls", :reload: "none", vidloop: "none",
+    width: "400", height: "300"
   attr_accessor :source, :type, :poster
 
   def initialize(attributes = {})
-    attributes.each do |attribute|
-      send("#{attribute}=") if respond_to("#{attribute}=")
-    end
+    define_attributes(attributes)
   end
 
   def set_type(source)

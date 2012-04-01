@@ -1,9 +1,10 @@
+require "./lib/Utility/class_methods"
+
 class Location
-  attr_accessor :top, :left, :type
+  include ClassMethods
+  defaults top: 0, left: 0, type: "absolute"
 
   def initialize(attributes={})
-    @top = attributes[:top] || 0
-    @left = attributes[:left] || 0
-    @type = attributes[:type] || "absolute"
+    define_attributes(attributes)
   end
 end

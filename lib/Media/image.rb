@@ -1,13 +1,10 @@
 class Image < Media
 
   attr_accessor :source, :dimensions. :caption, :width, :height
+  defaults alt_text: "", title:, caption: nil
 
-  def initialize
-    @width = nil
-    @height = nil
-    @alt_text = ""
-    @title = ""
-    @caption = nil
+  def initialize(attributes={})
+    define_attributes(attributes)
     @size = [0]
   end
 

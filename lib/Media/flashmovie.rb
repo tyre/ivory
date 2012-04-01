@@ -1,13 +1,10 @@
 class FlashMovie < Media
 
-  attr_accessor :source, :element, :version, :width, :height
+    defaults source: "nil", element: "nil", version: "8.0.0",width: "400",
+      height: "300"
 
-  def initialize
-    @source = "nil"
-    @element = "nil"
-    @version = "8.0.0"
-    @width = "400"
-    @height = "300"
+  def initialize(attributes={})
+    define_attributes(attributes)
   end
 
   def to_css

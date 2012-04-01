@@ -1,12 +1,11 @@
 class HTML5Audio < Media
 
-  attr_accessor :source, :controls, :autoplay, :preload, :audloop, :width, :height
+  defaults controls: "controls", autoplay: "autoplay", preload: "none",
+    audloop: "none"
+  attr_accessor :source, :width, :height
 
-  def initialize
-    @controls = "controls"
-    @autoplay = "autoplay"
-    @preload = "none"
-    @audloop = "none"
+  def initialize(attributes={})
+    define_attributes(attributes)
   end
 
   def to_css

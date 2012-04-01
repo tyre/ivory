@@ -1,9 +1,11 @@
 require "./group.rb"
 
 class List < Group
-  attr_accessor :items, :header, :bullet_style, :bullet
-  def initialize
-    @items = []
+  attr_accessor :header, :bullet_style, :bullet
+  defaults items: []
+
+  def initialize(attributes= {})
+    define_attributes(attributes)
   end
 
   def add_items(items, position=-1)

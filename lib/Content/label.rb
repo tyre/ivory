@@ -1,9 +1,8 @@
 class Label < Content
-  attr_accessor :text
+  defaults text: ""
 
   def initialize(attributes={})
-    super(attributes)
-    @text = attributes[:text] || ""
+    define_attributes(attributes)
   end
 
   protected

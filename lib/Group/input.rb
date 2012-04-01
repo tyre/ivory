@@ -5,14 +5,12 @@ class Input < Group
   TYPES = [ "button","checkbox","file","hidden","image","password",
             "radio","reset","submit","text"]
 
-  attr_accessor :label, :inputs, :type, :checked, :disabled, :name,
-                :read_only, :src, :maxlength, :size, :value
 
-  def initialize(type = "text", attributes = {label: "", inputs: []})
-    attributes.each do |key, value|
-      value = send("validate_#{key}", value) if respond_to("validate_#{key}")
-      self.send("#{key}=", value)
-    end
+  defaults type: "text", label: "", inputs: [], read_only: false
+  attr_accessor :checked, :disabled, :name, :src, :maxlength, :size, :value
+
+  def initialize(attributes = {})
+    define_attributes(attributes)
   end
 
   def validate_checked(checked)

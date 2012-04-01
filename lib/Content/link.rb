@@ -1,10 +1,8 @@
 class Link < Content
-  attr_accessor :href, :target, :text
+  defaults href: "", target: "", text: ""
 
   def initialize(attributes = {})
-    @href = attributes[:href]
-    @target = attributes[:target] || ""
-    @text = attributes[:text]
+    define_attributes(attributes)
   end
 
   def to_html

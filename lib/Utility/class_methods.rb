@@ -1,5 +1,14 @@
-#Attributed to Chad "Endbringer" Fowler.
+module ClassMethods
+    def define_attributes(hash)
+    attr_hash.each do |attribute, value|
+      if respond_to?("#{attribute}=")
+        send("#{attribute}=",value)
+      end
+    end
+  end
+end
 
+#Attributed to Chad Fowler.
 class Class
   def attr_with_default(attr_name, default_value)
     attr_writer attr_name

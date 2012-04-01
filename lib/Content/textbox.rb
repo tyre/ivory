@@ -1,9 +1,8 @@
 class TextBox < Content
-  attr_accessor :value
+  defaults value: ""
 
   def initialize(attributes={})
-    super(attributes)
-    @value = attributes[:value] || ""
+    define_attributes(attributes)
   end
 
   protected
