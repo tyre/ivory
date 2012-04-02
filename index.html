@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Ivory by tyre</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/tyre/ivory">Fork On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/tyre/ivory/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/tyre/ivory/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Ivory</h1>
+          <p>Object-oriented web design in ruby</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/tyre">tyre</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h3>Premise</h3>
+
+<p>HTML sucks for people. Computers can read and parse trees efficiently, but HTML poorly reflects our outlook on the world. Object-Oriented front-end design will encourage developers to think of web applications as a collection of objects =&gt; containers, widgets, and forms, each with unique (or grouped) styling and locations.</p>
+
+<h3>Structure</h3>
+
+<p>Ironically, Ivory's basic structure is a tree (but inheiritance is naturally such a structure.)</p>
+
+<ul>
+<li>
+<strong>DSObject</strong> [The base object]
+
+<ul>
+<li>Content
+
+<ul>
+<li>Button</li>
+<li>Label</li>
+<li>Link</li>
+<li>Textbox</li>
+</ul>
+</li>
+<li>Media
+
+<ul>
+<li>HTML5Audio</li>
+<li>HTML5Video</li>
+<li>FlashAudio</li>
+<li>FlashMovie</li>
+<li>Image</li>
+</ul>
+</li>
+<li>Group
+
+<ul>
+<li>Form</li>
+<li>Input</li>
+<li>List</li>
+<li>Table</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Location</strong></li>
+<li><strong>Event</strong></li>
+</ul><p>Locations are based on either absolute distance from the origin (upper left being 0,0) or relative location within the screen (upper left being 0%, 0%). This allows for greater flexibility, as objects can absolutely or relatively position themselves based on attributes of other objects. (Variables! So Meta!)</p>
+
+<p>Events are basic javascript event-handlers, attached to objects. Their events will be directly compiled into JS, though CSS3 and HTML5 specifications are preferred for everything else (animations, etc.)</p>
+
+<h3>HTML / CSS Compilation</h3>
+
+<p>Ivory takes a top-down approach. Each object which inheirets from DSObject should include both a to_html and to_css method. Each of these takes care of the basic structure of its own HTML/CSS, allowing the objects it encapsulates to call their own respective methods.</p>
+
+<h3>Style Conventions</h3>
+
+<ul>
+<li>lines should be &lt;= 80 characters in length</li>
+<li>prefer getters and setters for instance variables when possible (self.width over @width)</li>
+<li>use classes, modules, and methods in the Utility folder whenever possible. using Class#defaults to define defaults, getters, and setters is one example to clean up initialization code</li>
+<li>every object which inheirits from DSObject should allow initialization with a hash of attributes. The #define_attributes method is included for this purpose.</li>
+</ul><h2>¡¡¡¡¡¡ LICENSE !!!!!!</h2>
+
+<p>This License (and the README) must be included with the distribution of this code. If you like what we've done and meet us at a conference or on the streets, you are obligated to purchase us a beer. Other than that, Ivory is here to make your life better and design a better front-end. So stop reading this and go do it!</p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+  </body>
+</html>
