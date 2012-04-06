@@ -7,8 +7,4 @@ class Location
   def initialize(attributes={})
     define_attributes(attributes)
   end
-
-  def type=
-    
-  end
 end

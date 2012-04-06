@@ -9,7 +9,7 @@ class Form < Group
   end
 
   def add_input(items,position=-1)
-    self.inputs[position, *items]
+    self.inputs.insert(position, *items)
   end
 
   def to_html
