@@ -6,7 +6,7 @@ class Link < Content
   end
 
   def to_html
-    "<a href='#{self.href}' target='#{self.target}'>#{self.text}</a>"
+    "<a id='#{self.id}' href='#{self.href}' target='#{self.target}'>#{self.text}</a>"
   end
 
 end
