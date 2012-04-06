@@ -51,20 +51,3 @@ class Ivory
   end
 
 end
-
-d = Ivory.new
-b = Button.new :label => "Good it worked", :color => 'red'
-b1 = Button.new :label => "Test it worked", :font => 'verdana'
-t = TextBox.new :value => "cool :D"
-l = Label.new :text => "Great", :color => 'red'
-lk = Link.new :text => "Boo", :color => 'red'
-
-f = Form.new
-f.add_input(Input.new(:label => "Awesome"))
-
-d.add(b, b1, l, f, f)
-
-puts d.compile_html
-puts d.compile_css
-
-d.output
