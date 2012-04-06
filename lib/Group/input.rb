@@ -1,6 +1,3 @@
-require "../Content/label"
-require "../Content/textbox"
-
 class Input < Group
   TYPES = [ "button","checkbox","file","hidden","image","password",
             "radio","reset","submit","text"]
@@ -21,6 +18,10 @@ class Input < Group
   end
 
   def validate_type(type)
-    unless TYPES.include?(type) raise ArgumentError, "type must be #{TYPES}"
+    #unless TYPES.include?(type) raise ArgumentError, "type must be #{TYPES}"
+  end
+
+  def to_html
+    "<div><label>#{self.label}</label><input type='#{self.type}' name='#{self.name}' />"
   end
 end

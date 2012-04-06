@@ -7,9 +7,9 @@ class Content < DSObject
 
   def to_css
     "
-      font-size: '#{self.size}',
-      font-family: '#{self.font}',
-      text-color: '#{self.color}'
+      font-size: #{self.size}px;
+      font-family: '#{self.font}';
+      color: #{self.color};
     "
   end
 

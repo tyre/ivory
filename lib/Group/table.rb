@@ -1,5 +1,3 @@
-require "./group.rb"
-
 class Table < Group
   include Enumerable
 

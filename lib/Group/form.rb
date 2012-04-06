@@ -1,8 +1,6 @@
-require "./group.rb"
-
 class Form < Group
-  attr_accessor :action, :name, 
-  defaults inputs:[]
+  attr_accessor :action, :name
+  attr_with_default :inputs, []
 
   def initialize(attr_hash={})
     super
