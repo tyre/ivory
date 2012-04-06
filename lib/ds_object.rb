@@ -9,12 +9,12 @@ class DSObject
 
   def initialize(attributes={})
     define_attributes(attributes)
-    self.id ||= unique_id
+    self.id = 7
   end
 
   def compile_css
     "
-    ##{id} {
+    ##{self.id} {
     #{to_css}
     }
     "
