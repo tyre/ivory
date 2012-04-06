@@ -12,6 +12,12 @@ class DSObject
     self.id ||= DSObject.unique_id
   end
 
+  def to_css
+  end
+
+  def to_html
+  end
+
   def compile_css
     "
     ##{self.id} {

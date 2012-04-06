@@ -4,6 +4,9 @@ require './lib/Content/button'
 require './lib/Content/textbox'
 require './lib/Content/label'
 require './lib/Content/link'
+require './lib/Group/group'
+require './lib/Group/form'
+require './lib/Group/input'
 require "./lib/Utility/class_methods"
 
 class Ivory
@@ -50,13 +53,16 @@ class Ivory
 end
 
 d = Ivory.new
-b = Button.new :label => "Good it worked", :color => '#999'
+b = Button.new :label => "Good it worked", :color => 'red'
 b1 = Button.new :label => "Test it worked", :font => 'verdana'
 t = TextBox.new :value => "cool :D"
-l = Label.new :text => "Great"
+l = Label.new :text => "Great", :color => 'red'
 lk = Link.new :text => "Boo", :color => 'red'
 
-d.add(b, b1, lk)
+f = Form.new
+f.add_input(Input.new(:label => "Awesome"))
+
+d.add(b, b1, l, f, f)
 
 puts d.compile_html
 puts d.compile_css

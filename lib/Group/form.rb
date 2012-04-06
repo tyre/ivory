@@ -1,15 +1,13 @@
-require "./group.rb"
-
 class Form < Group
-  attr_accessor :action, :name, 
-  defaults inputs:[]
+  attr_accessor :action, :name
+  attr_with_default :inputs, []
 
   def initialize(attr_hash={})
     super
   end
 
   def add_input(items,position=-1)
-    self.inputs[position, *items]
+    self.inputs.insert(position, *items)
   end
 
   def to_html

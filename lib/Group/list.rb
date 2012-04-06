@@ -1,5 +1,3 @@
-require "./group.rb"
-
 class List < Group
   attr_accessor :header, :bullet_style, :bullet
   defaults items: []
