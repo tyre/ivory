@@ -31,6 +31,22 @@ class Ivory
     css
   end
 
+  def output
+    File.open("output.html", "w") do |f|
+      f.write "<html>
+  <head>
+    <style>
+      #{compile_css}
+    </style>
+  </head>
+  <body>
+    #{compile_html}
+  </body>
+</html>
+      "
+    end
+  end
+
 end
 
 d = Ivory.new

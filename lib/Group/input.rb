@@ -10,7 +10,7 @@ class Input < Group
   attr_accessor :checked, :disabled, :name, :src, :maxlength, :size, :value
 
   def initialize(attributes = {})
-    define_attributes(attributes)
+    super
   end
 
   def validate_checked(checked)

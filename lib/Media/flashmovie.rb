@@ -3,10 +3,6 @@ class FlashMovie < Media
     defaults source: "nil", element: "nil", version: "8.0.0",width: "400",
       height: "300"
 
-  def initialize(attributes={})
-    define_attributes(attributes)
-  end
-
   def to_css
     "\##{id} {
       width= '#{width}'

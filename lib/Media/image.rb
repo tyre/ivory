@@ -4,7 +4,7 @@ class Image < Media
   defaults alt_text: "", title:, caption: nil
 
   def initialize(attributes={})
-    define_attributes(attributes)
+    super
     @size = [0]
   end
 

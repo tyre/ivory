@@ -8,8 +8,8 @@ class DSObject
   attr_accessor :title, :dir, :lang, :access_key, :tab_index, :id
 
   def initialize(attributes={})
-    define_attributes(attributes)
-    self.id = 7
+    define_attributes(attributes) 
+    self.id ||= DSObject.unique_id
   end
 
   def compile_css

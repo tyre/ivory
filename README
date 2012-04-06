@@ -1,46 +1,44 @@
-Ivory
-
-Premise : 
+### Premise
 
 HTML sucks for people. Computers can read and parse trees efficiently, but HTML poorly reflects our outlook on the world. Object-Oriented front-end design will encourage developers to think of web applications as a collection of objects => containers, widgets, and forms, each with unique (or grouped) styling and locations.
 
-Structure :
+### Structure
 Ironically, Ivory's basic structure is a tree (but inheiritance is naturally such a structure.)
 
-- DSObject [The base object]
-  - Content
-    + Button
-    + Label
-    + Link
-    + Textbox
-  - Media
-    + HTML5Audio
-    + HTML5Video
-    + FlashAudio
-    + FlashMovie
-    + Image
-  - Group
-    + Form
-    + Input
-    + List
-    + Table
-- Location
-- Event
+- **DSObject** [The base object]
+    * Content
+        + Button
+        + Label
+        + Link
+        + Textbox
+    * Media
+        + HTML5Audio
+        + HTML5Video
+        + FlashAudio
+        + FlashMovie
+        + Image
+    * Group
+        + Form
+        + Input
+        + List
+        + Table
+- **Location**
+- **Event**
 
 Locations are based on either absolute distance from the origin (upper left being 0,0) or relative location within the screen (upper left being 0%, 0%). This allows for greater flexibility, as objects can absolutely or relatively position themselves based on attributes of other objects. (Variables! So Meta!)
 
 Events are basic javascript event-handlers, attached to objects. Their events will be directly compiled into JS, though CSS3 and HTML5 specifications are preferred for everything else (animations, etc.)
 
-HTML / CSS Compilation
+### HTML / CSS Compilation
 
 Ivory takes a top-down approach. Each object which inheirets from DSObject should include both a to_html and to_css method. Each of these takes care of the basic structure of its own HTML/CSS, allowing the objects it encapsulates to call their own respective methods.
 
-Style Conventions
+### Style Conventions
 + lines should be <= 80 characters in length
 + prefer getters and setters for instance variables when possible (self.width over @width)
 + use classes, modules, and methods in the Utility folder whenever possible. using Class#defaults to define defaults, getters, and setters is one example to clean up initialization code
 + every object which inheirits from DSObject should allow initialization with a hash of attributes. The #define_attributes method is included for this purpose.
 
 
-¡¡¡¡¡¡ LICENSE !!!!!!
+## ¡¡¡¡¡¡ LICENSE !!!!!!
 This License (and the README) must be included with the distribution of this code. If you like what we've done and meet us at a conference or on the streets, you are obligated to purchase us a beer. Other than that, Ivory is here to make your life better and design a better front-end. So stop reading this and go do it!
