@@ -4,7 +4,7 @@ class HTML5Video < Media
   defaults poster: "none", controls: "controls", preload: "none",
     vidloop: "none", width: "400", height: "300"
   def initialize(attributes={})
-    define_attributes(attributes)
+    super
   end
 
   def set_type(source)

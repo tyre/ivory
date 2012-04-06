@@ -5,7 +5,7 @@ class Video < Media
   attr_accessor :source, :type, :poster
 
   def initialize(attributes = {})
-    define_attributes(attributes)
+    super
   end
 
   def set_type(source)

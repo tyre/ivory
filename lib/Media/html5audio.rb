@@ -5,7 +5,7 @@ class HTML5Audio < Media
   attr_accessor :source, :width, :height
 
   def initialize(attributes={})
-    define_attributes(attributes)
+    super
   end
 
   def to_css

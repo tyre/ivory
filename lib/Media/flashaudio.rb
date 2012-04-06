@@ -4,7 +4,7 @@ class FlashAudio < Media
     flashvars: "flashvars", params: "params", width: "400", height: "300"
 
   def initialize(attributes={})
-    define_attributes(attributes)
+    super
   end
 
   def to_css

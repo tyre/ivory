@@ -2,7 +2,7 @@ class Content < DSObject
   defaults color: "Black", font: "Helvetica, Arial", size: "16"
 
   def initialize(attributes = {})
-    define_attributes(attributes)
+    super
   end
 
   def to_css

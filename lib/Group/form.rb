@@ -5,7 +5,7 @@ class Form < Group
   defaults inputs:[]
 
   def initialize(attr_hash={})
-    define_attributes(attr_hash)
+    super
   end
 
   def add_input(items,position=-1)

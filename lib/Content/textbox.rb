@@ -2,7 +2,7 @@ class TextBox < Content
   defaults value: ""
 
   def initialize(attributes={})
-    define_attributes(attributes)
+    super
   end
 
   protected

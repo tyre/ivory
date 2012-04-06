@@ -5,7 +5,7 @@ class List < Group
   defaults items: []
 
   def initialize(attributes= {})
-    define_attributes(attributes)
+    super
   end
 
   def add_items(items, position=-1)

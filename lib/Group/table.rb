@@ -6,9 +6,9 @@ class Table < Group
   attr_accessor :row_header, :column_header
   attr_reader :rows
 
-  def initialize
+  def initialize(attributes={})
     @rows = [[]]
-
+    super
   end
 
   def columns_count 
