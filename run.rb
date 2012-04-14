@@ -10,6 +10,6 @@ lk = Link.new :text => "Boo", :color => 'red'
 f = Form.new
 f.add_input(Input.new(:label => "Awesome"))
 
-d.add(b)
+d.add(b, b1,t,l,lk,f)
 
 d.output

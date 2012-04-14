@@ -1,8 +1,10 @@
 ## TODO: Make sure ids dont clash
 require "./lib/Utility/class_methods"
 require "./lib/location"
+require "./lib/Utility/html_conversion"
 
 class DSObject
+  include HTMLConversion
   include ClassMethods
   defaults hidden: false, location: Location.new, events: []
   attr_accessor :title, :dir, :lang, :access_key, :tab_index, :id

@@ -28,5 +28,31 @@ class Color
       color = clean_hex(color) if is_hex(color)
       valid_colors.include?(color.to_s.upcase)
     end
+
+    def hex_to_rgb(hex_color)
+      if is_hex(hex_color)
+        hex = hex_color.gsub("#", "")
+        hex_rgb_value('rgb', hex)
+      else
+        raise ArgumentError.new("Not a valid hex value :(")
+      end
+    end
+
+    def hex_rgb_value(val, hex)
+      case val
+      when 'r'
+        [hex.slice(0,2).to_i(16)]
+      when 'g'
+        [hex.slice(2,2).to_i(16)]
+      when 'b'
+        [hex.slice(4,2).to_i(16)]
+      when 'rgb'
+        [
+          hex.slice(0,2).to_i(16),
+          hex.slice(2,2).to_i(16),
+          hex.slice(4,2).to_i(16)
+        ]
+      end
+    end
   end
 end
